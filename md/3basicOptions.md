@@ -51,9 +51,9 @@ Input quantitative covariates from a plain text file which will be fitted as ran
 
 Specify the seed for random number generation, e.g. 123. Note that giving the same seed value would result in exactly the same results between two runs.
 
-**\--chain-length** 21000
+**\--chain-length** 3000
 
-Specify the total number of iterations in MCMC, e.g. 21000 (default).
+Specify the total number of iterations in MCMC, e.g. 3000 (default).
 
 **\--burn-in** 1000
 

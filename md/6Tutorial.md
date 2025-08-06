@@ -546,19 +546,19 @@ No merging is needed after completing all blocks.
 
 ### Genome-wide Fine-mapping analysis
 
-The Genome-wide Bayesian Mixture Model (GBMM) implemented in GCTB (e.g., SBayesRC) can perform genome-wide fine-mapping analysis. These methods require summary-level data from genome-wide association studies (GWAS) and linkage disequilibrium (LD) data from a reference sample. Our manuscript is currently under review and available at here (link to manuscript). 
+The Genome-wide Bayesian Mixture Model (GBMM) implemented in GCTB (e.g., SBayesRC) can perform genome-wide fine-mapping analysis. These methods require summary-level data from genome-wide association studies (GWAS) and linkage disequilibrium (LD) data from a reference sample. Our manuscript is available at [here](https://www.medrxiv.org/content/10.1101/2024.07.18.24310667v3). 
 
-We outline below on how to perform the genome-wide fine-mapping (GWFM) analysis and calculate the credible set using GCTB.
+We outline below (2 steps) on how to perform the genome-wide fine-mapping (GWFM) analysis and calculate the credible set using GCTB.
 
-#### Run genome-wide fine-mapping analysis
+#### Step 1. Generate eigen-decomposition data for SNPs matched in the GWAS summary statistics 
+
+You can use multi-threading to compute eigen-deomcomposition for all blocks:
 
 ```
-gctb --gwfm RC --ldm-eigen ldm --gwas-summary test.ma --annot annot.txt --gene-map gene_map.txt --thread 32 --out test
+gctb --ldm ukbEUR_13M_FullLDM --gwas-summary test.ma --make-ldm-eigen --thread 32 --out matched_ldm
 ```
 
-**\--gwfm** specifies the method to perform genome-wide fine-mapping analysis, e.g., RC.
-
-**\--ldm-eigen** specifies a folder containing the eigen-decomposition LD reference data for each block. We have computed these data for 13 million SNPs using a sample of European ancestry, which are available at [here](https://sbayes.pctgplots.cloud.edu.au/data/SBayesRC/resources/GWFM/LD/Imputed13M/).
+**\--ldm** specifies a folder containing the block-wise full LD matrices. We have computed these matrices for 13 million SNPs using a sample of European ancestry. You can download this file (`ukbEUR_13M_FullLDM.zip`) at [here](https://gctbhub.cloud.edu.au/data/SBayesRC/resources/GWFM/LD/Imputed13M/).
 
 **\--gwas-summary** reads summary-level data from GWAS. The file format is as follows:
 ```
@@ -568,14 +568,35 @@ rs1002 C G 0.0306 0.0034 0.0115 0.7659 129799
 rs1003 A C 0.5128 0.0045 0.0038 0.2319 129830
 ```
 
-**\--annot** reads the annotation file. The file format is as follows, with columns being SNP ID, Intercept (a column of one), and annotation values. You can include an arbitary number of annotations. A set of 96 annotations for 13 million SNPs is available at [here](https://sbayes.pctgplots.cloud.edu.au/data/SBayesRC/resources/GWFM/Annotation/). 
+**\--out matched_ldm** specifies the output folder that stores the eigen-decomposition data for matched SNPs.
+
+**\--make-ldm-eigen --thread 32** computes eigen-decomposition for all LD blocks using multi-threading (e.g., 32 threads).
+
+Alternatively, when running on a HPC cluster, it's often more efficient to compute all blocks in parallel by using `--block [number]`:
+
+```
+gctb --ldm ukbEUR_13M_FullLDM --gwas-summary test.ma --make-ldm-eigen --block $i --out matched_ldm
+```
+
+**\--block $i** extract a specific block where `i` is the block index starting from 1.
+
+
+#### Step 2. Run genome-wide fine-mapping analysis using the SBayesRC model
+
+gctb --gwfm RC --ldm-eigen matched_ldm --gwas-summary test.ma --annot annot.txt --gene-map gene_map.txt --thread 32 --out test
+
+
+**\--gwfm** specifies the method to perform genome-wide fine-mapping analysis, e.g., RC.
+
+**\--ldm-eigen** reads the eigen-decomposition data generated from Step 1.
+
+**\--annot** reads the annotation file. The file format is as follows, with columns being SNP ID, Intercept (a column of one), and annotation values. You can include an arbitary number of annotations. A set of 96 annotations for 13 million SNPs is available at [here](https://gctbhub.cloud.edu.au/data/SBayesRC/resources/GWFM/Annotation/). 
 ```
 SNP     Intercept   Anno1   Anno2   Anno3 
 rs1001  1           1       0       0.2
 rs1002  1           0       1       -1.5
 rs1003  1           1       1       0.7
 ```
-
 
 **\--gene-map** specifies gene map file to annotate the nearest gene for the identified credible set, which is available at [here](download/gene_map_hg38_hg19.txt). This flag is optional. The file format is as follows. The genome build can be selected using **\--genome-build** (hg19 or hg38). hg19 is used as default. 
 ```
@@ -689,3 +710,6 @@ gctb --get-pwld --ldm-eigen ldm --rsq 0.5 --thread 8 --out rsq0.5
 
 **\--out** saves the LD file with pairwise LD \\$r^2\\$ > 0.5.
 
+
+#### Prediction of fine-mapping power 
+This [shyny app](https://gctbhub.cloud.edu.au/shiny/power/) predicts the genome-wide fine-mapping power along with the sample size based on the genetic architecture parameters.

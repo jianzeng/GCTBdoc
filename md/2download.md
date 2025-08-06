@@ -10,20 +10,22 @@
 [GCTB tutorial data](download/gctb_2.0_tutorial.zip)
 
 ### Eigen-decomposition data of LD matrices
-The eigen-decomposition data are for SBayesRC and SBayesR with the low-rank model. In the follwoing link, we provide data derived from unrelated UKB individuals of Europan (EUR), East Asian (EAS), and African (AFR) ancestires. See our [manuscript](https://www.biorxiv.org/content/10.1101/2022.10.12.510418v1) and [Tutorial](https://cnsgenomics.com/software/gctb/#Tutorial) for details.
+The eigen-decomposition data are for SBayesRC and SBayesR with the low-rank model. In the follwoing link, we provide data derived from unrelated UKB individuals of Europan (EUR), East Asian (EAS), and African (AFR) ancestires. See our [manuscript](https://www.nature.com/articles/s41588-024-01704-y) and [Tutorial](https://cnsgenomics.com/software/gctb/#Tutorial) for details.
 
-* [1M HapMap3 SNPs](https://sbayes.pctgplots.cloud.edu.au/data/SBayesRC/resources/v2.0/LD/HapMap3/)
-* [7M Imputed SNPs](https://sbayes.pctgplots.cloud.edu.au/data/SBayesRC/resources/v2.0/LD/Imputed/)
-* [13M Imputed SNPs](https://sbayes.pctgplots.cloud.edu.au/data/SBayesRC/resources/GWFM/LD/Imputed13M/)
+* [1M HapMap3 SNPs](https://gctbhub.cloud.edu.au/data/SBayesRC/resources/v2.0/LD/HapMap3/)
+* [7M Imputed SNPs](https://gctbhub.cloud.edu.au/data/SBayesRC/resources/v2.0/LD/Imputed/)
 
 ### Functional genomic annotations
 Download the formatted data for per-SNP functional annotations derived from [S-LDSC BaselineLDv2.2](https://www.nature.com/articles/ng.3954). 
-* [7M SNP annotations](https://sbayes.pctgplots.cloud.edu.au/data/SBayesRC/resources/v2.0/Annotation/)
-* [13M SNP annotations](https://sbayes.pctgplots.cloud.edu.au/data/SBayesRC/resources/GWFM/Annotation/)
+* [7M SNP annotations](https://gctbhub.cloud.edu.au/data/SBayesRC/resources/v2.0/Annotation/)
+* [13M SNP annotations](https://gctbhub.cloud.edu.au/data/SBayesRC/resources/GWFM/Annotation/)
 
 Gene region annotations for genome build hg19 and hg38 are avaialble [here](download/gene_map_hg38_hg19.txt).
 
 ### LD matrices
+Blockwise full LD matrices for 13 million SNPs (MAF > 0.1%) in a random sample of 10K unrelated individuals of European ancestry in the UK Biobank.
+* [Blockwise full LD matrix (13 million SNPs)](https://gctbhub.cloud.edu.au/data/SBayesRC/resources/GWFM/LD/Imputed13M/)
+
 The following LD matrices were computed based on 1.1 million common SNPs in a random sample of 50K unrelated individuals of European ancestry in UK Biobank dataset unless otherwise noted.
 
 * [Shrunk sparse matrix](https://zenodo.org/record/3350914#.XyFfnC17G8o)
@@ -40,10 +42,10 @@ The sparse matrices described in [Zeng et al. (2021)](https://www.nature.com/art
 While the shrunk sparse matrices were used in our original SBayesR paper, [Prive et al. (2021)](https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btaa1029/6039173) found that using a banded matrix with a window size of 3 cM per SNP can improve prediction accuracy. Therefore, we have created such a LD matrix in GCTB format for SBayesR analysis.
 
 ### Summary data and PGS weights
-The summary data for the 50 (including 28 approximately independent) UKB traits analysed in [Zheng et al. 2022](https://www.biorxiv.org/content/10.1101/2022.10.12.510418v1) can be downloaded here: [summary data](https://sbayes.pctgplots.cloud.edu.au/data/SBayesRC/share/v1.0/summary/), and the corresponding PGS weights can be found here: [PGS weights](https://sbayes.pctgplots.cloud.edu.au/data/SBayesRC/share/v1.0/PGS/). The PGS weights are joint effect estimates derived from ~7 million genome-wide SNPs, therefore it’s important to have matched SNP set between training and validation datasets. This is because if some important SNPs present in the training are missing in the validation, the genetic effects captured by these SNPs will be lost. To maximise the utility of the joint SNP weights, we recommend considering genotype imputation or rerunning SBayesRC with the matched set of SNPs. In addition, note that the PGS weights were estimated using samples of the European ancestry, so they will perform best when applying to individuals of the European ancestry.
+The summary data for the 50 (including 28 approximately independent) UKB traits analysed in [Zheng et al. 2024](https://www.nature.com/articles/s41588-024-01704-y) can be downloaded here: [summary data](https://gctbhub.cloud.edu.au/data/SBayesRC/share/v1.0/summary/), and the corresponding PGS weights can be found here: [PGS weights](https://gctbhub.cloud.edu.au/data/SBayesRC/share/v1.0/PGS/). The PGS weights are joint effect estimates derived from ~7 million genome-wide SNPs, therefore it’s important to have matched SNP set between training and validation datasets. This is because if some important SNPs present in the training are missing in the validation, the genetic effects captured by these SNPs will be lost. To maximise the utility of the joint SNP weights, we recommend considering genotype imputation or rerunning SBayesRC with the matched set of SNPs. In addition, note that the PGS weights were estimated using samples of the European ancestry, so they will perform best when applying to individuals of the European ancestry.
 
 ### Genome-wide fine-mapping (GWFM) analysis results
-Results of SNP PIPs, local credible sets, and globle credible sets for 509 traits can be downloaded here: [GWFM results](https://sbayes.pctgplots.cloud.edu.au/data/SBayesRC/share/GWFM/)
+Results of SNP PIPs, local credible sets, and globle credible sets for 599 traits can be downloaded here: [GWFM results](https://gctbhub.cloud.edu.au/data/SBayesRC/share/Finemap/v1.1/)
 
 ### Older versions
 
