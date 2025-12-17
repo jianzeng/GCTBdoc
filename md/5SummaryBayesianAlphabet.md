@@ -132,3 +132,8 @@ This option will invoke the following parameterisation for the common factor of 
 **\--hsq-percentage-model true**
 
 If you run SBayesR using GCTB v2.5.1 or above, the default model is the heritability percentage model, i.e., a mixture of normal distributions with the variance equal to \\$\gamma_k %\\$ of the estimated SNP-based heritability. To switch to the model described in the [SBayesR paper](https://www.nature.com/articles/s41467-019-12653-0), which considers the variance component \\$\sigma\_\beta^2\\$ as a free parameter, set the value to be 'false'.
+
+**\--convert --snp-res test.snpRes --ldm-eigen ldm --extract snplist**
+
+The **--convert** function maps the joint effect estimates of SNPs in the `test.snpRes` file to the joint effect estimates of a subset of SNPs defined in the `snplist` file, based on the LD information provided in the `ldm` folder. Since this mapping is done by LD blocks, multiple threads can be used to speed up the computation (e.g., **--thread 8**).
+
