@@ -4,7 +4,7 @@
 [gctb\_2.5.4\_Linux.zip](download/gctb_2.5.4_Linux.zip) (*Lastest version updated in 21 April 2025*)
 
 ### Source code
-[GCTB 2.5.4](download/gctb_2.5.4_scr.zip)
+https://github.com/jianzeng/GCTB
 
 ### Tutorial data
 [GCTB tutorial data](download/gctb_2.0_tutorial.zip)
@@ -14,6 +14,7 @@ The eigen-decomposition data are for SBayesRC and SBayesR with the low-rank mode
 
 * [1M HapMap3 SNPs](https://gctbhub.cloud.edu.au/data/SBayesRC/resources/v2.0/LD/HapMap3/)
 * [7M Imputed SNPs](https://gctbhub.cloud.edu.au/data/SBayesRC/resources/v2.0/LD/Imputed/)
+* [13M SNPs (MAF>0.1%)](https://gctbhub.cloud.edu.au/data/SBayesRC/resources/GWFM/LD/Imputed13M/)
 
 ### Functional genomic annotations
 Download the formatted data for per-SNP functional annotations derived from [S-LDSC BaselineLDv2.2](https://www.nature.com/articles/ng.3954). 
