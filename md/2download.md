@@ -4,7 +4,7 @@
 [gctb\_2.5.4\_Linux.zip](download/gctb_2.5.4_Linux.zip) (*Lastest version updated in 21 April 2025*)
 
 ### Source code
-https://github.com/jianzeng/GCTB
+[https://github.com/jianzeng/GCTB](https://github.com/jianzeng/GCTB)
 
 ### Tutorial data
 [GCTB tutorial data](download/gctb_2.0_tutorial.zip)
