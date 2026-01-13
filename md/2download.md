@@ -1,7 +1,7 @@
 
 ## Download {: .expand}
 ### Executable
-[gctb\_2.5.4\_Linux.zip](download/gctb_2.5.4_Linux.zip) (*Lastest version updated in 21 April 2025*)
+[gctb\_2.5.5\_Linux.zip](download/gctb_2.5.5_Linux.zip) (*Lastest version updated in 12 December 2025*)
 
 ### Source code
 [https://github.com/jianzeng/GCTB](https://github.com/jianzeng/GCTB)
@@ -52,6 +52,8 @@ Results of SNP PIPs, local credible sets, and globle credible sets for 599 trait
 
 ### Older versions
 
+gctb_2.5.4: [[Linux executable](download/gctb_2.5.4_Linux.zip)] [[source code](download/gctb_2.5.4_scr.zip)]
+
 gctb_2.5.2: [[gctb\_2.5.2\_Linux.zip](download/gctb_2.5.2_Linux.zip)] [[source code](download/gctb_2.5.2_scr.zip)]
 
 gctb_2.5.1: [[Linux executable](download/gctb_2.5.1_Linux.zip)] [[source code](download/gctb_2.5.1_scr.zip)]
@@ -91,3 +93,5 @@ The MPI version implements a distributed computing strategy that scales the anal
 **8.** 20 June, 2024: version 2.5.2 fixed bugs regarding -nan SigmaSq results and adds LD-based approach for computing credible sets.
 
 **9.** 21 April, 2025: version 2.5.4 add --gwfm flag to perform genome-wide fine-mapping analysis.
+
+**10.** 12 December, 2025: version 2.5.5 fix some bugs and use upper-trangular rather than full block LD matrices.

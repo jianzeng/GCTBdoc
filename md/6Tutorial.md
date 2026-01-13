@@ -583,8 +583,9 @@ gctb --ldm ukbEUR_13M_FullLDM --gwas-summary test.ma --make-ldm-eigen --block $i
 
 #### Step 2. Run genome-wide fine-mapping analysis using the SBayesRC model
 
+```
 gctb --gwfm RC --ldm-eigen matched_ldm --gwas-summary test.ma --annot annot.txt --gene-map gene_map.txt --thread 32 --out test
-
+```
 
 **\--gwfm** specifies the method to perform genome-wide fine-mapping analysis, e.g., RC.
 

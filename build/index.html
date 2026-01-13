@@ -78,9 +78,9 @@ the software with supports from <a href="https://scholar.google.com.au/citations
 <p>Zeng et al. (2021) Bayesian analysis of GWAS summary data reveals differential signatures of natural selection across human complex traits and functional genomic categories. <a href="https://www.nature.com/articles/s41467-021-21446-3"><em>Nature Communications</em>, dio: 10.1038/s41467-021-21446-3.</a></p>
 <h2 id="downloadexpand" class="expand">Download </h2>
 <hr><h3 id="executable">Executable</h3>
-<p><a href="download/gctb_2.5.4_Linux.zip">gctb_2.5.4_Linux.zip</a> (<em>Lastest version updated in 21 April 2025</em>)</p>
+<p><a href="download/gctb_2.5.5_Linux.zip">gctb_2.5.5_Linux.zip</a> (<em>Lastest version updated in 12 December 2025</em>)</p>
 <hr><h3 id="sourcecode">Source code</h3>
-<p>https://github.com/jianzeng/GCTB</p>
+<p><a href="https://github.com/jianzeng/GCTB">https://github.com/jianzeng/GCTB</a></p>
 <hr><h3 id="tutorialdata">Tutorial data</h3>
 <p><a href="download/gctb_2.0_tutorial.zip">GCTB tutorial data</a></p>
 <hr><h3 id="eigendecompositiondataofldmatrices">Eigen-decomposition data of LD matrices</h3>
@@ -124,6 +124,7 @@ the software with supports from <a href="https://scholar.google.com.au/citations
 <hr><h3 id="genomewidefinemappinggwfmanalysisresults">Genome-wide fine-mapping (GWFM) analysis results</h3>
 <p>Results of SNP PIPs, local credible sets, and globle credible sets for 599 traits can be downloaded here: <a href="https://gctbhub.cloud.edu.au/data/SBayesRC/share/Finemap/v1.1/">GWFM results</a></p>
 <hr><h3 id="olderversions">Older versions</h3>
+<p>gctb_2.5.4: [<a href="download/gctb_2.5.4_Linux.zip">Linux executable</a>] [<a href="download/gctb_2.5.4_scr.zip">source code</a>]</p>
 <p>gctb_2.5.2: [<a href="download/gctb_2.5.2_Linux.zip">gctb_2.5.2_Linux.zip</a>] [<a href="download/gctb_2.5.2_scr.zip">source code</a>]</p>
 <p>gctb_2.5.1: [<a href="download/gctb_2.5.1_Linux.zip">Linux executable</a>] [<a href="download/gctb_2.5.1_scr.zip">source code</a>]</p>
 <p>gctb_2.05beta: [<a href="download/gctb_2.05beta_Linux.zip">Linux executable</a>] [<a href="download/gctb_2.05beta_scr.zip">source code</a>]</p>
@@ -143,6 +144,7 @@ the software with supports from <a href="https://scholar.google.com.au/citations
 <p><strong>7.</strong> 29 April, 2024: version 2.5.1 adds functions for fine-mapping and to remove problematic SNPs during MCMC in SBayesRC.</p>
 <p><strong>8.</strong> 20 June, 2024: version 2.5.2 fixed bugs regarding -nan SigmaSq results and adds LD-based approach for computing credible sets.</p>
 <p><strong>9.</strong> 21 April, 2025: version 2.5.4 add <span class="kwd">--gwfm</span> flag to perform genome-wide fine-mapping analysis.</p>
+<p><strong>10.</strong> 12 December, 2025: version 2.5.5 fix some bugs and use upper-trangular rather than full block LD matrices.</p>
 <h2 id="basicoptionsexpand" class="expand">Basic options </h2>
 <hr><h3 id="inputandoutput">Input and output</h3>
 <p><strong><span class="kwd">--bfile</span></strong> test</p>
@@ -726,7 +728,8 @@ rs1003 A C 0.5128 0.0045 0.0038 0.2319 129830
 </code></pre>
 <p><strong><span class="kwd">--block</span> $i</strong> extract a specific block where <code>i</code> is the block index starting from 1.</p>
 <h4 id="step2rungenomewidefinemappinganalysisusingthesbayesrcmodel">Step 2. Run genome-wide fine-mapping analysis using the SBayesRC model</h4>
-<p>gctb <span class="kwd">--gwfm</span> RC <span class="kwd">--ldm-eigen</span> matched<em>ldm <span class="kwd">--gwas-summary</span> test.ma <span class="kwd">--annot</span> annot.txt <span class="kwd">--gene-map</span> gene</em>map.txt <span class="kwd">--thread</span> 32 <span class="kwd">--out</span> test</p>
+<pre><code>gctb --gwfm RC --ldm-eigen matched_ldm --gwas-summary test.ma --annot annot.txt --gene-map gene_map.txt --thread 32 --out test
+</code></pre>
 <p><strong><span class="kwd">--gwfm</span></strong> specifies the method to perform genome-wide fine-mapping analysis, e.g., RC.</p>
 <p><strong><span class="kwd">--ldm-eigen</span></strong> reads the eigen-decomposition data generated from Step 1.</p>
 <p><strong><span class="kwd">--annot</span></strong> reads the annotation file. The file format is as follows, with columns being SNP ID, Intercept (a column of one), and annotation values. You can include an arbitary number of annotations. A set of 96 annotations for 13 million SNPs is available at <a href="https://gctbhub.cloud.edu.au/data/SBayesRC/resources/GWFM/Annotation/">here</a>. </p>
