@@ -558,7 +558,7 @@ You can use multi-threading to compute eigen-deomcomposition for all blocks:
 gctb --ldm ukbEUR_13M_FullLDM --gwas-summary test.ma --make-ldm-eigen --thread 32 --out matched_ldm
 ```
 
-**\--ldm** specifies a folder containing the block-wise full LD matrices. We have computed these matrices for 13 million SNPs using a sample of European ancestry. You can download this file (`ukbEUR_13M_FullLDM.zip`) at [here](https://gctbhub.cloud.edu.au/data/SBayesRC/resources/GWFM/LD/Imputed13M/).
+**\--ldm** specifies a folder containing the block-wise full LD matrices. We have computed these matrices for 13 million SNPs using a sample of European ancestry. You can download this file (`ukbEUR_13M_FullLDM.zip`) at [here](https://gctbhub.cloud.edu.au/data/SBayesRC/resources/GWFM/LD/Imputed13M/). The block map file under genome build GRCh37 (`ref_b37_1588blocks.pos`) can be found in the same folder or [here](download/ref_b37_1588blocks.pos).
 
 **\--gwas-summary** reads summary-level data from GWAS. The file format is as follows:
 ```
