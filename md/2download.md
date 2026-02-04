@@ -1,7 +1,7 @@
 
 ## Download {: .expand}
 ### Executable
-[gctb\_2.5.5\_Linux.zip](download/gctb_2.5.5_Linux.zip) (*Lastest version updated in 12 December 2025*)
+[gctb\_2.5.5\_Linux.zip](download/gctb_2.5.5_Linux.zip) (*Lastest version updated in 4 February 2026*)
 
 ### Source code
 [https://github.com/jianzeng/GCTB](https://github.com/jianzeng/GCTB)
