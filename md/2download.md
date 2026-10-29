@@ -7,7 +7,7 @@
 [https://github.com/jianzeng/GCTB](https://github.com/jianzeng/GCTB)
 
 ### Tutorial data
-[GCTB tutorial data](download/gctb_2.0_tutorial.zip)
+[GCTB tutorial data](https://github.com/jianzeng/GCTB/tree/master/tutorial)
 
 ### Eigen-decomposition data of LD matrices
 The eigen-decomposition data are for SBayesRC and SBayesR with the low-rank model. In the follwoing link, we provide data derived from unrelated UKB individuals of Europan (EUR), East Asian (EAS), and African (AFR) ancestires. See our [manuscript](https://www.nature.com/articles/s41588-024-01704-y) and [Tutorial](https://cnsgenomics.com/software/gctb/#Tutorial) for details.
@@ -45,7 +45,7 @@ While the shrunk sparse matrices were used in our original SBayesR paper, [Prive
 ### Summary data and PGS weights
 * The summary data for the 50 (including 28 approximately independent) UKB traits analysed in [Zheng et al. 2024](https://www.nature.com/articles/s41588-024-01704-y) can be downloaded here: [summary data](https://gctbhub.cloud.edu.au/data/SBayesRC/share/v1.0/summary/), and the corresponding PGS weights can be found here: [PGS weights](https://gctbhub.cloud.edu.au/data/SBayesRC/share/v1.0/PGS/). The PGS weights are joint effect estimates derived from ~7 million genome-wide SNPs, therefore it’s important to have matched SNP set between training and validation datasets. This is because if some important SNPs present in the training are missing in the validation, the genetic effects captured by these SNPs will be lost. To maximise the utility of the joint SNP weights, we recommend considering genotype imputation or rerunning SBayesRC with the matched set of SNPs. In addition, note that the PGS weights were estimated using samples of the European ancestry, so they will perform best when applying to individuals of the European ancestry.
 
-* The summary statistics and PGS weights for 115 traits with ~7 million common SNPs overlapping TopMed and HRC imputed data can be downloaded [here](https://gctbhub.cloud.edu.au/data/SBayesRC/share/115traits/). The corresponding LD matrix data are [here](https://gctbhub.cloud.edu.au/data/SBayesRC/share/ldm7M/) (including block-wise full LD matrices and eigen-decomposed matrices). These data are from our manuscript "Empirical evalation of analytic validity of polygenic scores" (currently under peer review).
+* The summary statistics and PGS weights for 115 traits with ~7 million common SNPs overlapping TopMed and HRC imputed data can be downloaded [here](https://gctbhub.cloud.edu.au/data/SBayesRC/share/115traits/). The corresponding LD matrix data are [here](https://gctbhub.cloud.edu.au/data/SBayesRC/share/ldm7M/) (including block-wise full LD matrices and eigen-decomposed matrices). These data are from our paper ("Empirical evalation of analytic validity of polygenic scores")[https://link.springer.com/article/10.1186/s13073-026-01654-6].
 
 ### Genome-wide fine-mapping (GWFM) analysis results
 Results of SNP PIPs, local credible sets, and globle credible sets for 599 traits can be downloaded here: [GWFM results](https://gctbhub.cloud.edu.au/data/SBayesRC/share/Finemap/v1.1/)

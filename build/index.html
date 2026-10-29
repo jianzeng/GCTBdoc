@@ -69,7 +69,7 @@ the software with supports from <a href="https://scholar.google.com.au/citations
 <p>Zeng et al. (2018) Signatures of negative selection in the genetic architecture of human complex traits. 
 <a href="https://www.nature.com/articles/s41588-018-0101-4"><em>Nature Genetics</em>, doi: 10.1038/s41588-018-0101-4.</a></p>
 <h4 id="gwfmgenomewidefinemapping">GWFM (genome-wide fine-mapping)</h4>
-<p>Wu et al. (2025) Genome-wide fine-mapping improves identification of causal variants. <a href="https://doi.org/10.1101/2024.07.18.24310667"><em>medRxiv</em> 2024.07.18.24310667; doi:10.1101/2024.07.18.24310667</a></p>
+<p>Wu et al. (2025) Genome-wide fine-mapping improves identification of causal variants. <a href="https://www.nature.com/articles/s41588-026-02549-3"><em>Nature Genetics</em>, doi:10.1038/s41588-026-02549-3</a></p>
 <h4 id="sbayesrc">SBayesRC</h4>
 <p>Zheng et al. (2024) Leveraging functional genomic annotations and genome coverage to improve polygenic prediction of complex traits within and between ancestries. <a href="https://www.nature.com/articles/s41588-024-01704-y"><em>Nature Genetics</em>, doi: 10.1038/s41588-024-01704-y.</a></p>
 <h4 id="sbayesr">SBayesR</h4>
@@ -82,7 +82,7 @@ the software with supports from <a href="https://scholar.google.com.au/citations
 <hr><h3 id="sourcecode">Source code</h3>
 <p><a href="https://github.com/jianzeng/GCTB">https://github.com/jianzeng/GCTB</a></p>
 <hr><h3 id="tutorialdata">Tutorial data</h3>
-<p><a href="download/gctb_2.0_tutorial.zip">GCTB tutorial data</a></p>
+<p><a href="https://github.com/jianzeng/GCTB/tree/master/tutorial">GCTB tutorial data</a></p>
 <hr><h3 id="eigendecompositiondataofldmatrices">Eigen-decomposition data of LD matrices</h3>
 <p>The eigen-decomposition data are for SBayesRC and SBayesR with the low-rank model. In the follwoing link, we provide data derived from unrelated UKB individuals of Europan (EUR), East Asian (EAS), and African (AFR) ancestires. See our <a href="https://www.nature.com/articles/s41588-024-01704-y">manuscript</a> and <a href="https://cnsgenomics.com/software/gctb/#Tutorial">Tutorial</a> for details.</p>
 <ul>
@@ -119,7 +119,7 @@ the software with supports from <a href="https://scholar.google.com.au/citations
 <hr><h3 id="summarydataandpgsweights">Summary data and PGS weights</h3>
 <ul>
 <li><p>The summary data for the 50 (including 28 approximately independent) UKB traits analysed in <a href="https://www.nature.com/articles/s41588-024-01704-y">Zheng et al. 2024</a> can be downloaded here: <a href="https://gctbhub.cloud.edu.au/data/SBayesRC/share/v1.0/summary/">summary data</a>, and the corresponding PGS weights can be found here: <a href="https://gctbhub.cloud.edu.au/data/SBayesRC/share/v1.0/PGS/">PGS weights</a>. The PGS weights are joint effect estimates derived from ~7 million genome-wide SNPs, therefore it’s important to have matched SNP set between training and validation datasets. This is because if some important SNPs present in the training are missing in the validation, the genetic effects captured by these SNPs will be lost. To maximise the utility of the joint SNP weights, we recommend considering genotype imputation or rerunning SBayesRC with the matched set of SNPs. In addition, note that the PGS weights were estimated using samples of the European ancestry, so they will perform best when applying to individuals of the European ancestry.</p></li>
-<li><p>The summary statistics and PGS weights for 115 traits with ~7 million common SNPs overlapping TopMed and HRC imputed data can be downloaded <a href="https://gctbhub.cloud.edu.au/data/SBayesRC/share/115traits/">here</a>. The corresponding LD matrix data are <a href="https://gctbhub.cloud.edu.au/data/SBayesRC/share/ldm7M/">here</a> (including block-wise full LD matrices and eigen-decomposed matrices). These data are from our manuscript "Empirical evalation of analytic validity of polygenic scores" (currently under peer review).</p></li>
+<li><p>The summary statistics and PGS weights for 115 traits with ~7 million common SNPs overlapping TopMed and HRC imputed data can be downloaded <a href="https://gctbhub.cloud.edu.au/data/SBayesRC/share/115traits/">here</a>. The corresponding LD matrix data are <a href="https://gctbhub.cloud.edu.au/data/SBayesRC/share/ldm7M/">here</a> (including block-wise full LD matrices and eigen-decomposed matrices). These data are from our paper ("Empirical evalation of analytic validity of polygenic scores")[https://link.springer.com/article/10.1186/s13073-026-01654-6].</p></li>
 </ul>
 <hr><h3 id="genomewidefinemappinggwfmanalysisresults">Genome-wide fine-mapping (GWFM) analysis results</h3>
 <p>Results of SNP PIPs, local credible sets, and globle credible sets for 599 traits can be downloaded here: <a href="https://gctbhub.cloud.edu.au/data/SBayesRC/share/Finemap/v1.1/">GWFM results</a></p>
@@ -708,7 +708,7 @@ rs1003  1           1       1       0.7
 </code></pre>
 <p>No merging is needed after completing all blocks.</p>
 <hr><h3 id="genomewidefinemappinganalysis">Genome-wide Fine-mapping analysis</h3>
-<p>The Genome-wide Bayesian Mixture Model (GBMM) implemented in GCTB (e.g., SBayesRC) can perform genome-wide fine-mapping analysis. These methods require summary-level data from genome-wide association studies (GWAS) and linkage disequilibrium (LD) data from a reference sample. Our manuscript is available at <a href="https://www.medrxiv.org/content/10.1101/2024.07.18.24310667v3">here</a>. </p>
+<p>The Genome-wide Bayesian Mixture Model (GBMM) implemented in GCTB (e.g., SBayesRC) can perform genome-wide fine-mapping analysis. These methods require summary-level data from genome-wide association studies (GWAS) and linkage disequilibrium (LD) data from a reference sample. We have published this work in <a href="https://www.nature.com/articles/s41588-026-02549-3">Wu et al. <em>Nat Genet</em> 2026</a>. </p>
 <p>We outline below (2 steps) on how to perform the genome-wide fine-mapping (GWFM) analysis and calculate the credible set using GCTB.</p>
 <h4 id="step1generateeigendecompositiondataforsnpsmatchedinthegwassummarystatistics">Step 1. Generate eigen-decomposition data for SNPs matched in the GWAS summary statistics</h4>
 <p>You can use multi-threading to compute eigen-deomcomposition for all blocks:</p>

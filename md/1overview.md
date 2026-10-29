@@ -33,7 +33,7 @@ Zeng et al. (2018) Signatures of negative selection in the genetic architecture 
 [*Nature Genetics*, doi: 10.1038/s41588-018-0101-4.](https://www.nature.com/articles/s41588-018-0101-4)
 
 #### GWFM (genome-wide fine-mapping)
-Wu et al. (2025) Genome-wide fine-mapping improves identification of causal variants. [*medRxiv* 2024.07.18.24310667; doi:10.1101/2024.07.18.24310667]( https://doi.org/10.1101/2024.07.18.24310667)
+Wu et al. (2025) Genome-wide fine-mapping improves identification of causal variants. [*Nature Genetics*, doi:10.1038/s41588-026-02549-3](https://www.nature.com/articles/s41588-026-02549-3)
 
 #### SBayesRC
 Zheng et al. (2024) Leveraging functional genomic annotations and genome coverage to improve polygenic prediction of complex traits within and between ancestries. [*Nature Genetics*, doi: 10.1038/s41588-024-01704-y.](https://www.nature.com/articles/s41588-024-01704-y)

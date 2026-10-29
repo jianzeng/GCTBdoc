@@ -546,7 +546,7 @@ No merging is needed after completing all blocks.
 
 ### Genome-wide Fine-mapping analysis
 
-The Genome-wide Bayesian Mixture Model (GBMM) implemented in GCTB (e.g., SBayesRC) can perform genome-wide fine-mapping analysis. These methods require summary-level data from genome-wide association studies (GWAS) and linkage disequilibrium (LD) data from a reference sample. Our manuscript is available at [here](https://www.medrxiv.org/content/10.1101/2024.07.18.24310667v3). 
+The Genome-wide Bayesian Mixture Model (GBMM) implemented in GCTB (e.g., SBayesRC) can perform genome-wide fine-mapping analysis. These methods require summary-level data from genome-wide association studies (GWAS) and linkage disequilibrium (LD) data from a reference sample. We have published this work in [Wu et al. *Nat Genet* 2026](https://www.nature.com/articles/s41588-026-02549-3). 
 
 We outline below (2 steps) on how to perform the genome-wide fine-mapping (GWFM) analysis and calculate the credible set using GCTB.
 
